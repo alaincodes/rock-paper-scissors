@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>ROCK PAPER SCISSORS</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <h1>ROCK PAPER SCISSORS</h1>
-
-  <h3>PLAYER CHOICES:</h3>
-  <button id="p_rock">ROCK</button>
-  <button id="p_paper">PAPER</button>
-  <button id="p_scissors">SCISSORS</button>
-
-  <h3>COMPUTER CHOICES:</h3>
-  <button id="c_rock">ROCK</button>
-  <button id="c_paper">PAPER</button>
-  <button id="c_scissors">SCISSORS</button>
-
-  <p id="result">RESULT !</p>
-
-  <p >PLAYER SCORE : <span id="p_score">0</span></p>
-  <p >COMPUTER SCORE : <span id="c_score">0</span></p>
-  <button id="resetBtn">RESET</button>
-  <script src="/app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ROCK PAPER SCISSORS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  </head>
+  <body>
+  <main class="superContainer">
+    <div class="row">
+      <h1>ROCK PAPER SCISSORS</h1>
+      
+      <h3>PLAYER CHOICES:</h3>
+      <div class="btnPosition">
+        <button id="p_rock"><i class="far fa-hand-rock fa-3x"></i></button>
+        <button id="p_paper"><i class="far fa-hand-paper fa-3x"></i></button>
+        <button id="p_scissors"><i class="far fa-hand-scissors fa-3x"></i></button>
+      </div>
+      <h3>COMPUTER CHOICES:</h3>
+        <div class="btnPosition">
+          <button id="c_rock"><i class="far fa-hand-rock fa-3x"></i></button>
+          <button id="c_paper"><i class="far fa-hand-paper fa-3x"></i></button>
+          <button id="c_scissors"><i class="far fa-hand-scissors fa-3x"></i></button>  
+        </div>
+      <p id="result">RESULT !</p>
+      
+      <p>PLAYER SCORE : <span id="p_score">0</span></p>
+      <p>COMPUTER SCORE : <span id="c_score">0</span></p>
+      <div class="btnPosition">
+        <button id="resetBtn">RESET <i class="fas fa-trash-restore fa-3x"></i></button>
+      </div>
+        
+    </div>
+  </main>
+    <script src="/app.js"></script>
+  </body>
 </html>

@@ -24,25 +24,25 @@ function win() {
   player_score++;
   p_score.innerHTML = player_score;
   c_score.innerHTML = computer_score;
-  getResult.innerHTML = `${player_choice} beats ${computer_choice}`;
+  getResult.innerHTML = `${player_choice} (PLAYER) BEATS ${computer_choice} (COMPUTER)`;
 }
 
 function lose() {
   computer_score++;
   p_score.innerHTML = player_score;
   c_score.innerHTML = computer_score;
-  getResult.innerHTML = `${computer_choice} beats ${player_choice}`;
+  getResult.innerHTML = `${computer_choice} (COMPUTER) BEATS ${player_choice} (PLAYER)`;
 }
 
 function draw() {
   p_score.innerHTML = player_score;
   c_score.innerHTML = computer_score;
-  getResult.innerHTML = `IT'S A TIE`;
+  getResult.innerHTML = `${computer_choice} (COMPUTER) EQUALS ${player_choice} (PLAYER)`;
 }
 
 p_rock.addEventListener('click', () => {
   player_choice = 'rock';
-  p_rock.setAttribute('style', "background: green;");
+  p_rock.classList.add('playing');
   computerPlay();
   playRound(player_choice, computer_choice);
 });
@@ -77,31 +77,6 @@ let computerPlay = () => {
   }
 }
 
-
-// function playRound(player_choice, computer_choice) {
-//   if (player_choice === computer_choice) { 
-//     draw();
-//    } 
-
-//   if (player_choice === "rock") {
-//     if (computer_choice === "scissors") {
-//       win();
-//     } else { lose(); }
-//   }
-
-//   if (player_choice === "scissors") {
-//     if (computer_choice === "rock") {
-//       lose();
-//     } else { win(); }
-//   }
-
-//   if (player_choice === "paper") {
-//     if (computer_choice === "rock") { 
-//       lose();
-//     } else { win(); }
-//   }
-// };
-
 function playRound(player_choice, computer_choice) {
   const pc = player_choice;
   const cc = computer_choice;
@@ -126,7 +101,7 @@ function playRound(player_choice, computer_choice) {
 };
 
 resetBtn.addEventListener('click', () => {
-  playAgain(player_choice, computer_choice);
+  playAgain();
 })
 
 function playAgain() {
