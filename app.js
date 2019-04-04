@@ -10,6 +10,8 @@ const c_scissors = document.getElementById('c_scissors');
 const p_score = document.getElementById('p_score');
 const c_score = document.getElementById('c_score');
 
+const getResult = document.getElementById('result');
+
 const resetBtn = document.getElementById('resetBtn');
 
 let player_choice = '';
@@ -22,17 +24,20 @@ function win() {
   player_score++;
   p_score.innerHTML = player_score;
   c_score.innerHTML = computer_score;
+  getResult.innerHTML = `${player_choice} beats ${computer_choice}`;
 }
 
 function lose() {
   computer_score++;
   p_score.innerHTML = player_score;
   c_score.innerHTML = computer_score;
+  getResult.innerHTML = `${computer_choice} beats ${player_choice}`;
 }
 
 function draw() {
   p_score.innerHTML = player_score;
   c_score.innerHTML = computer_score;
+  getResult.innerHTML = `IT'S A TIE`;
 }
 
 p_rock.addEventListener('click', () => {
@@ -73,27 +78,50 @@ let computerPlay = () => {
 }
 
 
+// function playRound(player_choice, computer_choice) {
+//   if (player_choice === computer_choice) { 
+//     draw();
+//    } 
+
+//   if (player_choice === "rock") {
+//     if (computer_choice === "scissors") {
+//       win();
+//     } else { lose(); }
+//   }
+
+//   if (player_choice === "scissors") {
+//     if (computer_choice === "rock") {
+//       lose();
+//     } else { win(); }
+//   }
+
+//   if (player_choice === "paper") {
+//     if (computer_choice === "rock") { 
+//       lose();
+//     } else { win(); }
+//   }
+// };
+
 function playRound(player_choice, computer_choice) {
-  if (player_choice === computer_choice) { 
+  const pc = player_choice;
+  const cc = computer_choice;
+
+  switch (pc + cc) {
+    case "rock" + "scissors":
+    case "paper" + "rock":
+    case "scissors" + "paper":
+    win();
+    break;
+    case "rock" + "paper":
+    case "paper" + "scissors":
+    case "scissors" + "rock":
+    lose();
+    break;
+    case "rock" + "rock":
+    case "paper" + "paper":
+    case "scissors" + "scissors":
     draw();
-   } 
-
-  if (player_choice === "rock") {
-    if (computer_choice === "scissors") {
-      win();
-    } else { lose(); }
-  }
-
-  if (player_choice === "scissors") {
-    if (computer_choice === "rock") {
-      lose();
-    } else { win(); }
-  }
-
-  if (player_choice === "paper") {
-    if (computer_choice === "rock") { 
-      lose();
-    } else { win(); }
+    break;
   }
 };
 
