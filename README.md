@@ -2,4 +2,4 @@
 
   Working.........
   
- Live demo : https://imatcode.github.io/rock-paper-scissors/
+ Live demo : https://alaincodes.github.io/rock-paper-scissors/
